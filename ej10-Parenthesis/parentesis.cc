@@ -4,10 +4,10 @@
   * Grado en Ingeniería Informática
   * Informática Básica 2021-2022
   *
-  * @file first_position.cc
+  * @file parentesis.cc
   * @author alu0101475899@ull.edu.es
   * @date Nov 23 2021
-  * @brief Given a sequence made up of only ‘(’ and ‘)’, tell if the parentheses close correctly.
+  * @brief Este programa indica si los parénteesis introducidos por usted cierran corretamente o no.
   * @bug There are no known bugs
   * @see https://jutge.org/problems/P48107
   */
@@ -16,17 +16,17 @@
 #include <string>
 #include <vector>
 
-bool NumberOfParentheses(std::string introduced_sentence) {
+bool NumberOfParentheses(std::string frase_usuario) {
   int close{0};
-  for (int contador = 0; contador < introduced_sentence.length(); ++contador) {
-    if (introduced_sentence.at(contador) == '(') {
+  for (int contador = 0; contador < frase_usuario.length(); ++contador) {
+    if (frase_usuario.at(contador) == '(') {
       close++;
     }
-    if (introduced_sentence.at(0) == ')' || introduced_sentence.at(introduced_sentence.length() - 1) == '(') {
+    if (frase_usuario.at(0) == ')' || frase_usuario.at(frase_usuario.length() - 1) == '(') {
       close = 1;
       return close;
     }
-    if (introduced_sentence.at(contador) == ')') {
+    if (frase_usuario.at(contador) == ')') {
       close--;
     }
   }
@@ -34,10 +34,10 @@ bool NumberOfParentheses(std::string introduced_sentence) {
 }
 
 int main() {
-  std::string introduced_sentence;
-  std::getline(std::cin, introduced_sentence);
+  std::string frase_usuario;
+  std::getline(std::cin, frase_usuario);
   bool close{false};
-  close = NumberOfParentheses(introduced_sentence);
+  close = NumberOfParentheses(frase_usuario);
   if (close == 0) {
     std::cout << "yes" << std::endl;
   } else {

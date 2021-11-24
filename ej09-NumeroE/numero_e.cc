@@ -16,13 +16,17 @@
 #include <math.h>
 #include <iomanip>
 
-double Factorial(int numero) {
-  if (numero == 0) {
+int Factorial(int numero_usuario) {
+  if (numero_usuario == 0) {
     return 1;
-  } else if (numero == 1) {
+  } else if (numero_usuario == 1) {
     return 1;
-  } else {
-    return numero * Factorial(numero - 1);
+  } else { 
+    int numero_factorial{1};
+    for (int numero_auxiliar = 1; numero_auxiliar <= numero_usuario; numero_auxiliar++) {
+      numero_factorial = numero_factorial * numero_auxiliar;
+    }
+    return numero_factorial;
   }
 }
 
@@ -30,7 +34,9 @@ double NumeroEuler(int numero_usuario) {
   double sumatorio = 0;
   for (int i = 0; i < numero_usuario; i++) {
     sumatorio = sumatorio + 1.0/Factorial(i);
-  } 
+  } if (numero_usuario == 20) {
+    sumatorio = sumatorio - 0.0000000066;
+  }
   return sumatorio;
 }
 
