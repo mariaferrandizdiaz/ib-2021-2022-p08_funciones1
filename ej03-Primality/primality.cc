@@ -15,12 +15,12 @@
 #include <iostream>
 
 
-bool esPrimo(int numero_usuario) {
+bool EsPrimo(int numero_usuario) {
   if (numero_usuario == 0 || numero_usuario == 1 || numero_usuario == 4) {
     return false;
   }
-  for (int x = 2; x < numero_usuario / 2; x++) {
-    if (numero_usuario % x == 0) {
+  for (int divisor = 2; divisor < numero_usuario / 2; ++divisor) {
+    if (numero_usuario % divisor == 0) {
       return false;
     }
   }
@@ -30,8 +30,9 @@ bool esPrimo(int numero_usuario) {
 int main() {
   int cantidad_numeros, numero_usuario;
   std::cin >> cantidad_numeros;
-  while(std::cin >> numero_usuario) {
-    bool resultado = esPrimo(numero_usuario);
+  for (int contador = 0 ; contador < cantidad_numeros; ++contador) {
+    std::cin >> numero_usuario;
+    bool resultado = EsPrimo(numero_usuario);
     if (resultado == true) {
       std::cout << numero_usuario << " is prime" << std::endl;
     } else {

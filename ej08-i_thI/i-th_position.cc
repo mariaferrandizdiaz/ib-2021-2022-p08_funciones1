@@ -11,41 +11,22 @@
   * @bug There are no known bugs
   * @see https://jutge.org/problems/P48107
   */
- 
-#include <iostream>
-#include <string>
+#include <iostream> 
+#include <vector>
 
-void PosicionIntroducida(int posicion) {
-  // MensajeDeContinuacion();
-  std::array<int,10000> numeros_introducidos;
-  int contador = 0;
-  for (contador = 1; contador < 100; contador++) {
-    std::cin >> numeros_introducidos[contador];
-    if (contador == posicion) {
-      std::cout << "At the position " << posicion << " there is a(n) " << numeros_introducidos[contador] << '.' << std::endl;
-      break;
-    }
-  }
-}
-void PosicionDigito(std::string cadena_usuario, int numero_usuario) {
-  for (int i = 0; i <= static_cast<int> (cadena_usuario.length()); i++) {
-    if (cadena_usuario[i] == numero_usuario) {
-      std::cout << cadena_usuario[i];
-    }
-  }
+void PosicionLetraUsuario(std::vector<int> numeros_usuario[100], int numero_posicion) {
+  int localizador = numero_posicion + 1;
+  std::cout << "At the position " << numero_posicion << " there is a(n) " << numeros_usuario[localizador] << "." << std::endl;
+  return;
 }
 
-int main() {
-  std::string cadena_usuario;
-  int numero_usuario;
-  std::cin >> numero_usuario;
-  std::cin >> cadena_usuario;
-  getline(std::cin, cadena_usuario);
-  PosicionDigito(cadena_usuario, numero_usuario);
-  /**if (cantidad_a > 0) {
-    std::cout << "yes" << std::endl;
-  } else {
-    std::cout << "no" << std::endl;
-  }*/
+int main(){
+  int numero_posicion;
+  std::cin >> numero_posicion;
+  std::vector<int> numeros_usuario[100];
+  for (int indice = 0; indice <= 90; ++indice) {
+    std::cin >> numeros_usuario[indice];
+  }
+  PosicionLetraUsuario(numeros_usuario, numero_posicion);
   return 0;
 }

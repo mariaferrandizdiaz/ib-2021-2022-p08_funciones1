@@ -22,10 +22,10 @@ int PrintFirstEven(int numero_usuario, int& contador) {
 }
 
 int main() {
-  int numero_usuario, even, contador{0};
+  int numero_usuario, primer_par, contador{0};
   while (std::cin >> numero_usuario) {
-    even = PrintFirstEven(numero_usuario, contador); 
-    if (even != 0) {
+    primer_par = PrintFirstEven(numero_usuario, contador); 
+    if (primer_par != 0) {
     std::cout << contador << std::endl;
     break;
     }

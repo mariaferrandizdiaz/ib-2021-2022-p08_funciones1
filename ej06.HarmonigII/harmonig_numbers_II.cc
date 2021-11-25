@@ -39,7 +39,7 @@ int main() {
     double harmonig_primer_numero = CalcularHarmonigPrimerNumero(primer_numero);
     double harmonig_segundo_numero = CalcularHarmonigSegundoNumero(segundo_numero);
     double resultado_resta = harmonig_primer_numero - harmonig_segundo_numero;
-    std::cout << std::fixed << std::setprecision(4) << resultado_resta << std::endl;
-  }
+    std::cout << std::fixed << std::setprecision(10) << resultado_resta << std::endl;
+  } 
   return 0;
 }
