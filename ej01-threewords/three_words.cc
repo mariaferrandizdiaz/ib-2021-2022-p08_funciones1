@@ -14,9 +14,17 @@
  
 #include <iostream>
 
+/**
+ * @brief funcion que imprime el orden inverso de las palabras que haya introducido el usuario
+ * @param palabra_1 primera palabra introducida por el usuario
+ * @param palabra_2 segunda palabra introducida por el usuario
+ * @param palabra_3 tercera palabra introducida por el usuario
+ */
+
 void ImprimePalabras(std::string palabra_1, std::string palabra_2, std::string palabra_3) {
   std::cout << palabra_3 << " " << palabra_2 << " " << palabra_1 << std::endl;
 }
+
 int main() {
   std::string palabra_1, palabra_2, palabra_3;
   std::cin >> palabra_1 >> palabra_2 >> palabra_3;

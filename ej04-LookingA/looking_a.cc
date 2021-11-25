@@ -15,6 +15,11 @@
 #include <iostream>
 #include <string>
 
+/**
+ * @brief función encargada de contar el numero de a que tiene la frase del usuario.
+ * @param frase_usuario cadea introducida por el usuario. 
+ */
+
 int ContarA(std::string frase_usuario) {
   int cantidad_a = 0;
   for (int i = 0; i <= static_cast<int> (frase_usuario.length()); i++) {

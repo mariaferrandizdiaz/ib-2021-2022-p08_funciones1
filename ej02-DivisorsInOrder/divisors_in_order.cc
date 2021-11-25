@@ -7,27 +7,35 @@
   * @file divisors_in_order.cc
   * @author alu0101475899@ull.edu.es
   * @date Nov 23 2021
-  * @brief Este programa devuelve las tres palabras introducidas por el usuario pero en orden inverso.
+  * @brief Este programa imprime en orden todos los divisores de un numero.
   * @bug There are no known bugs
   * @see https://jutge.org/problems/P48107
   */
 #include <iostream>
 #include <cmath>
 
-int CalculadoraDivisores(int numero_usuario) {
+/**
+ * @brief función encargada de hallar los divisores del numero introducido por el usuario.
+ * @param numero_usuario numero introducido por el usuario del que queremos obtener los divisores.
+ */
+
+int CalculadoraDivisores(const int numero_usuario) {
   std::cout << "divisors of " << numero_usuario << ":";
-  for (int contador = 1; contador < sqrt(numero_usuario); contador++) {
+  for (int contador = 1; contador < sqrt(numero_usuario); ++contador) {
     if (numero_usuario % contador == 0) {
       std::cout << " " << contador;
     }
   }
-  for (int contador = sqrt(numero_usuario); contador >= 1; contador--) {
+  for (int contador = sqrt(numero_usuario); contador >= 1; --contador) {
     if (numero_usuario % contador == 0) {
-      std::cout << " " << (numero_usuario / contador);
+      int resultado{0};
+      resultado = numero_usuario / contador;
+      std::cout << " " << resultado;
     }
   }
   return 0;
 }
+
 int main() {
   int numero_usuario;
   while(std::cin >> numero_usuario) {

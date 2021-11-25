@@ -4,7 +4,7 @@
   * Grado en Ingeniería Informática
   * Informática Básica 2021-2022
   *
-  * @file harmonig_numbers_I.cc
+  * @file harmonic_numbers_I.cc
   * @author alu0101475899@ull.edu.es
   * @date Nov 23 2021
   * @brief Este programa devuelve Hn = 1/1 + 1/2 + ⋯ + 1/n.
@@ -15,18 +15,23 @@
 #include <iostream>
 #include <iomanip>
 
-double CalcularHarmonig(int numero_usuario) {
-  double harmonig_number{0}, division_n;
+/**
+ * @brief funcion encargada de realizar la suma 1/1 + 1/2 + ⋯ + 1/n hasta el numero introducido por el usuario.
+ * @param numero_usuario numero introducido por el usuario.
+ */
+
+double CalcularHarmonic(const int numero_usuario) {
+  double harmonic_number{0}, division_n;
   for(double divisor = 1; divisor <= numero_usuario; divisor++) {
     division_n = (1 / divisor);
-    harmonig_number += division_n;
+    harmonic_number += division_n;
   }
-  return harmonig_number;
+  return harmonic_number;
 }
 
 int main() {
   int numero_usuario;
   std::cin >> numero_usuario;
-  std::cout << std::fixed << std::setprecision(4) << CalcularHarmonig(numero_usuario) << std::endl;
+  std::cout << std::fixed << std::setprecision(4) << CalcularHarmonic(numero_usuario) << std::endl;
   return 0;
 }

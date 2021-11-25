@@ -12,21 +12,27 @@
   * @see https://jutge.org/problems/P48107
   */
 #include <iostream> 
-#include <vector>
 
-void PosicionLetraUsuario(std::vector<int> numeros_usuario[100], int numero_posicion) {
-  int localizador = numero_posicion + 1;
-  std::cout << "At the position " << numero_posicion << " there is a(n) " << numeros_usuario[localizador] << "." << std::endl;
-  return;
+/**
+ * @brief Esta funcion se encarga de leer los numeros que haya introducido el usuario hasta la posicion que este había indicado al inicio.
+ * @param kPosicion_usuario la posicion de la que quiere descubrir el numero.
+ * @return int 0
+ */ 
+
+int PosicionLetraUsuario(const int kPosicion_usuario) {
+  int contador{0}, numero_usuario;
+  while (std::cin >> numero_usuario) {
+    ++contador;
+    if(contador == kPosicion_usuario) {
+      std::cout << "At the position " << kPosicion_usuario << " there is a(n) " << numero_usuario << "." << std::endl;
+    }
+  }
+  return 0;
 }
 
 int main(){
-  int numero_posicion;
-  std::cin >> numero_posicion;
-  std::vector<int> numeros_usuario[100];
-  for (int indice = 0; indice <= 90; ++indice) {
-    std::cin >> numeros_usuario[indice];
-  }
-  PosicionLetraUsuario(numeros_usuario, numero_posicion);
+  int posicion_usuario;
+  std::cin >> posicion_usuario;
+  PosicionLetraUsuario(posicion_usuario);
   return 0;
 }

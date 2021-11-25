@@ -14,8 +14,14 @@
  
 #include <iostream>
 
+/**
+ * @brief funcion encargada de verificar si el numero del usuario es primo o no.
+ * @param numero_usuario numero introducido por el usuario.
+ * @return true 
+ * @return false 
+ */
 
-bool EsPrimo(int numero_usuario) {
+bool EsPrimo(const int numero_usuario) {
   if (numero_usuario == 0 || numero_usuario == 1 || numero_usuario == 4) {
     return false;
   }

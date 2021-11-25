@@ -11,10 +11,11 @@
   * @brief Este programa devuelve las tres palabras introducidas por el usuario pero en orden inverso.
   * @bug There are no known bugs
   * @see https://jutge.org/problems/P48107
-  *//
-#include<iostream>
+  */
+  
+#include <iostream>
 
-int main(){
+int main() {
   int auxEntero = 0;
   int rangoBusqueda = 0;
   std::cin>>rangoBusqueda;
