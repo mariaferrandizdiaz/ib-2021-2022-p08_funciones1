@@ -18,7 +18,6 @@
  * @param kPosicion_usuario la posicion de la que quiere descubrir el numero.
  * @return int 0
  */ 
-
 int PosicionLetraUsuario(const int kPosicion_usuario) {
   int contador{0}, numero_usuario;
   while (std::cin >> numero_usuario) {
@@ -30,7 +29,7 @@ int PosicionLetraUsuario(const int kPosicion_usuario) {
   return 0;
 }
 
-int main(){
+int main() {
   int posicion_usuario;
   std::cin >> posicion_usuario;
   PosicionLetraUsuario(posicion_usuario);
